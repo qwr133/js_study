@@ -1,0 +1,38 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li id="apple">사과</li>
+        <li id="banana" style="background: greenyellow;">바나나</li>
+        <li id="grape">포도</li>
+        <li id="peach">복숭아</li>
+    </ul>
+    <script>
+
+        // console.log(document.body);
+            //문자X, 객체임!!(바나나) --앞쪽에 $를 넣는다
+       const $banana= document.getElementById('banana');
+        console.log($banana.textContent);
+
+        $banana.style.background ='red';
+
+        // id가 grape인 요소노드를 취득하여 배경색상 violet, 가로길이 fit-content
+
+        const $grape = document.getElementById('grape')
+
+        $grape.style.background='violet';
+        $grape.style.width='fit-content';
+
+        
+    </script>
+
+</body>
+</html>
