@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- ul#fruits>li.fr*3 -->
+    <div class="wrap">
+    <ul id="fruits">
+        <li class="fr apple">사과</li>
+        <li class="fr banana">바나나</li>
+        <li class="fr grape">포도</li>
+    </ul>
+    </div>
+
+
+    <div class="box"></div>
+
+    <script>
+        //ul요소노드를 취득
+        const $fruits = document.getElementById('fruits');
+
+        //children의 경우 써야할 것과 쓰지 않아야할 프로퍼티가 있었는데
+        //부모요소는 상관없음(parentNode, ParentElement)
+        const $wrap = $fruits.parentElement; 
+
+        const[$apple,$banana,$grape]=[...$wrap.firstElementChild.children];
+
+        const sameFlag = $banana.nextElementSibling === $grape ; //바나나 밑에 형제 포도야? 
+        console.log(sameFlag);
+
+        const sameFlag2 = $banana.previousElementSibling === $apple; // 바나나 이전 형제 애플이야?true
+        console.log(sameFlag2);
+
+        $apple.parentElement.parentElement === $wrap; //애플이 할머니 모셔오려면 엄마한테 연락하고 그 이후에 할머니한테 연락하기
+
+        //실제로 하게되면 부모의 부모의 부모의 부모의 형제의 ... 이런식으로 복잡한 태그를 삭제해야하는 경우가 있음
+        //closet('css선택자'); 가장 가까운 태그를 찾음
+        var foundElem = $apple.closest('.wrap');
+        console.log('찾은 요소:', foundElem);
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul id="fruits">
+        <li>사과</li>
+        <li>바나나</li>
+        <li>포도</li>
+    </ul>
+
+
+    <script>
+        const $fruits = document.getElementById('fruits');
+        
+        //새로운 li 생성
+        const $newLi = $fruits.firstElementChild.cloneNode(); //객체복사
+        $newLi.textContent = '복숭아';
+
+        console.log($newLi);
+
+        //노드교체 (new, old) 새롭게 추가될 것을 앞에 쓰고, 나가야할 애를 뒤에 써야함
+        $fruits.replaceChild($newLi, $fruits.firstElementChild);
+
+        //노드삭제
+        $fruits.removeChild($fruits.lastElementChild); //삭제타겟
+
+        //자식노드 전체삭제
+        $fruits.innerHTML='';
+
+        // [같은의미]
+        // const children = [...$fruits.children]
+        // for(const $li of children){
+        //     $fruits.removeChild($li)
+        // };
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- button#b$*3 -->
+
+    <button id="b1">클릭1</button>
+    <button id="b2">클릭2</button>
+    <button id="b3">클릭3</button>
+
+    <script>
+        //프로퍼티 : 객체의 속성
+        // const dog = {
+        //     name: '뽀삐'
+        // };
+        // dog.age =3;
+        // dog.bark= function(){
+        //     console.log('왈왈왈왈르르르르');
+        // };
+        // dog.bark();
+
+        function sayHello(){
+            alert('안녕하세요');
+        }
+
+        const [$b1, $b2, $b3] = [...document.querySelectorAll('button')];
+        $b1.onclick= sayHello; //호출,콜 하는게 아니라 onclick property에 넣는 개념!
+
+        $b2.onclick= function(){
+            $b2.style.width='150px';
+        };
+
+        $b3.onmouseover = () => {
+            $b3.style.background='red';
+        };
+        $b3.onmouseout = () => {
+            $b3.style.background='orange';
+        };
+
+        //핸들러제거
+        $b3.onmouseover = null;
+        
+
+    </script>
+</body>
+</html>

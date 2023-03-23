@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dropdown{
+            width: 200px;
+            height: 100px;
+            background: brown;
+            color: tan;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+            display: inline-block;
+    }
+
+        .drop-content li{  
+            width: 200px;
+            height: 100px;
+            background: gray;
+            color: white;
+            position: absolute;
+            
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- mouseover -->
+
+    <div class="dropdown">
+        <button class="btn">Drop</button>
+            <div  id="drop-content">
+                <a href="#">Menu1</a> 
+                <a href="#">Menu2</a>
+                <a href="#">Menu3</a>
+                <a href="#">Menu4</a>
+                <a href="#">Menu5</a>
+            </div>      
+    </div>
+
+    <script>
+        const $menu = document.querySelectorAll('#drop-content')
+        $menu.onclick= ()=> {
+        $menu.style.background ='yellow'
+    }
+    </script>
+
+</body>
+</html>

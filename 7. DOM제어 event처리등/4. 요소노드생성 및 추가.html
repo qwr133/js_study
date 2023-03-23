@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul id="fruits">
+        <li>사과</li>
+    </ul>
+
+    <script>
+          // 만들면서 추가하는 함수
+          function append({$parent, tagName, text}) {
+            appendNewTag($parent, makeTag(tagName, text));
+
+          }
+
+
+        //1태그이름과 텍스트를 전달받으면 태그를 생성하는 함수
+        function makeTag(TagName, text=''){ //text 입력은 option
+            const $newTag = document.createElement(TagName);
+            if(text) $newTag.textContent=text;
+            return $newTag;
+        }
+
+        //2부모태그를 알려주면 자식을 추가해주는 함수
+        function appendnewTag($parent, target){
+            $parent.appendChild($target);
+        
+        }
+
+        //빨간점라인만 딱 알아두기!!
+        // const $fruits = document.querySelector('#fruits')
+        const $fruits = document.getElementById('fruits')  //ul 컨택
+
+        //li태그 생성 =? <li></li> 이것만 만든것
+        const $newLi = document.createElement('li');
+
+        //텍스트 추가 => <li>바나나</li> 
+        $newLi.textContent = '바나나';
+
+        //새로운 노드를 자식으로 추가하는 명령(ul에 넣어야함)
+        $fruits.appendChild($newLi);
+
+         // 새로운노드를 자식으로 추가하는 명령
+         $fruits.appendChild($newLi);
+        
+
+        const fruitNames = [
+            '바나나', '딸기', '포도'
+            , '자몽', '오렌지', '레몬'
+        ];
+
+        fruitNames.forEach(fn => {
+
+            append({
+                $parent: $fruits,
+                tagName: 'li',
+                text: fn
+            });
+        });
+
+    </script>
+</body>
+</html>

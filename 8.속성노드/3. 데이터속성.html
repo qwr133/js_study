@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="users"> 
+        <!-- 띄어쓰기 부분은 케밥케이스로 - 연결해서 작성하기 -->
+        <li data-user-number="4321" data-role="common">박철수</li> 
+        <li data-user-number="9999" data-role="admin">박영희</li>
+    </ul>
+
+    <script>
+
+        const [$u1, $u2] = [...document.querySelector('.users').children];
+        
+       const kimNumber= +$u1.dataset.userNumber; //"4321"은 문자이기 때문에 타입을 숫자로 변경하기위해 앞에 +입력
+        console.log(kimNumber+ 10);
+
+
+        const role = $u2.dataset.role;
+        console.log(role);
+
+        $u1.dataset.role='gold';
+
+        $u1.dataset.hahaHoho = '하하호호'
+
+        delete $u1.dataset.role;
+        
+    </script>
+</body>
+</html>

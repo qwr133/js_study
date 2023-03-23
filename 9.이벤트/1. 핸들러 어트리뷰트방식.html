@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            background: orange;
+            margin: 20px;
+        }
+
+        .box.red{
+            background: red;
+        }
+
+        .box.green{
+            background: yellowgreen;
+            font-size: 25px;
+            /* 정중앙(3) */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- css 코드랑 html 코드랑 같은 곳에 있으면 코드가 너무 지저분해서 쓰지 않기 -->
+    <!-- 파일이 script랑 분리되어있을 때는 각각의 파일들을 일일히 수정해야할 필요가 있음 -->
+    <div class="box" onclick="callMessage()"></div>
+    <div class="box red" onclick="growUp()"></div>
+    <div class="box green" onclick="makeText()"></div>
+
+<script>
+    //이벤트핸들러: 이벤트가 발생했을 떄 브라우저가 대신 호출해주는 함수
+    //기능만 만들고, 해당 속성을 클릭했을 때 함수를 onclick으로 해서 대입하기
+    function callMessage(){
+        alert('첫번쨰 박스 클릭함!')
+    };
+
+    const growUp = function() {
+        const $redBox = document.querySelector('.red');
+        $redBox.style.width='200px';
+    }
+
+    const makeText = () => {
+        const $green = document.querySelector('.green');
+        $green.textContent='안녕'
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="email" id="account" value="abc@naver.com">
+
+    <script>
+        /*
+        const typeAttr ={
+            name: 'type',
+            value: 'email'
+        };
+        const idAttr ={
+            name: 'id',
+            value: 'email'
+        };
+        const valueAttr ={
+            name: 'value',
+            value: 'email'
+        };
+
+        //유사배열
+        const NamedNodeMap ={
+            0: typeAttr,
+            1: idAttr,
+            2: valueAttr,
+            length: 3,
+            type: typeAttr,
+            id: idAttr,
+            value: valueAttr
+        }
+
+        const $input = {
+            tagName: 'INPUT',
+            textContent: '',
+            attributes: NamedNodeMap //속성노드의 정체
+        }
+        */
+
+        const $input = document.querySelector('input');
+        // console.log($input.attributes[0]); //html properties - attributes 내용확인
+        // console.log($input.attributes.type);
+        console.log($input.attributes.id.value);
+
+        $input.attributes.id.value = 'acc';
+
+        $input.attributes.value.value='zzz'; //이메일칸이 바로 zzz로 바뀜
+        $input.attributes.type.value='checkbox' //이메일칸이 체크박스가 바뀜
+
+        
+    </script>
+    
+</body>
+</html>

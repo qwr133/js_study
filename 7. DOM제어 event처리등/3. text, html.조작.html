@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #greet span{
+            color: red;
+        }
+
+        /* #greet::before{
+            content: "what's up!";
+        } */
+
+    </style>
+</head>
+
+<body>
+    
+    <div id="greet">
+        hello <span>World</span>
+    </div>
+
+
+    <script>
+        const $greet = document.getElementById('greet');
+        console.log($greet.textContent); //의도된 공백이 중요하기 때문에 
+
+        //텍스트 변경 --> 원래의 span 태그가 없어짐 - 중첩구조에서 텍스트가 다른 태그에 감싸지는 경우 전체적으로 다 대체되니 조심해야하는 사항이다. ★★★★★★
+        $greet.textContent = '안녕하세요';
+        $greet.innerHTML = '<span>안녕</span>하세요' //태그가 인식이되어 스타일이 적용됨/ textcontent 부분은 적용되지 않음
+        
+        //innerhtml로 모든 자식태그 삭제
+        $greet.innerHTML= '' ; //=> 전체삭제 가능
+
+        // document.querySelector('.todo-list').innerHTML=''; //todolist 태그 모두삭제
+        
+        $greet.innerHTML += '<span>메롱메롱</span>';
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box{
+            width: 100px;
+            height: 100px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box" id="item" title="안녕하세요"></div>
+
+
+    <script>
+        const $box = document.querySelector('.box');
+
+        //속성값 참조
+        const hello=$box.getAttribute('title'); //title 속성값 알려줘
+        console.log(hello);
+
+        //속성값 변경
+        $box.setAttribute('id', 'watermelon');
+
+        //속성값 추가
+        $box.setAttribute('style', 'border-radius: 50%');
+
+        //속성값 제거
+        $box.removeAttribute('id');
+
+        //속성값 유무 확인 (안전한 수정을 위해서 속성값 확인 필수)
+        console.log($box.hasAttribute('id'));
+    </script>
+
+</body>
+</html>
