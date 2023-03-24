@@ -1,0 +1,55 @@
+이벤트 버블 발생 ul에 클릭이벤트를 걸었는데 각각의 li들도 이벤트가 걸림 <br>
+apple 클릭시 내 것도 이벤트 터지고, 부모껏도 터짐!!
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #fruits{
+            padding: 50px;
+            border: 2px solid red;
+        }
+
+        #fruits li {
+            background: yellow;
+            margin-bottom: 10px;
+        }
+
+        #fruits li:first-child{
+            position: absolute;
+            bottom: 10%;
+            right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="fruits">        
+            <li id="apple">Apple</li>
+            <li id="banana">Banana</li>
+            <li id="grape">Grape</li>      
+    </ul>
+
+    <script>
+        const $fruits = document.getElementById('fruits');
+
+        const $apple = $fruits.firstElementChild;
+
+
+        $fruits.addEventListener('click', e=>{
+            console.log('ul의 클릭이벤트 발생!');
+            console.log(e.target.tagName, '-눌렀음');
+        });
+
+        $apple.onclick = e=> {
+            console.log('apple의 클릭이벤트 발생');
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="btn">클릭하세요</button>
+
+    <script>
+        function hello(){
+            alert('안녕?');
+        }
+
+        const $btn = document.querySelector('#btn');
+
+        /*2개 함수를 만들었지만 두개 다 사용이 안됨. 제일 나중에 작성된 함수만 작동함
+        $btn.onclick=hello;
+
+        $btn.onclick = function() {
+            $btn.style.background='aqua';
+        };
+*/
+
+        //addeventListenr 동일 이벤트가 중복으로도 사용이 가능하지만 코드가 많은 경우에 에러 발생률이 높음
+                                    //함수function(){}
+        $btn.addEventListener('click', hello);
+        $btn.addEventListener('click', ()=>{
+            $btn.style.background='aqua'
+        });
+        
+        //핸들러제거 : 이름 없는 함수는 제거 못함
+        $btn.removeEventListener('click',hello);
+        
+        </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #fruits {
+            display: flex;
+            list-style: none;
+            padding: 20px;
+            border: 2px solid red;
+        }
+        #fruits li {
+            width: 100px;
+            cursor: pointer;
+            background: orange;
+            margin-right: 10px;
+        }
+        .active {
+            color: red;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    
+    <ul id="fruits">
+        <li id="apple" class="active">Apple</li>
+        <li id="banana">Banana</li>
+        <li id="grape">Grape</li>
+    </ul>
+
+    <div>선택된 과일: <em class="msg">Apple</em></div>
+
+    <label>
+        # 새로운 과일 추가하기: 
+        <input type="text" class="text-box">
+        <button id="add">추가</button>
+    </label>
+
+
+    <script>
+        //li태그들에게 일일히 이벤트를 부여하면
+        //새롭게 추가되는 li들도 또 이벤트를 부여해줘야 하는 번거로움
+        
+        //부모태그인 ul에 범용성 있는 이벤트를 부여해서 li들이 버블링통해 사용하도록 설정
+        
+        const $fruits = document.querySelector('#fruits');
+
+        //1-1 태그에서 클래스 active를 제거하는 함수
+        const removeActive = ()=>{
+            [...$fruits.children].forEach($li =>{
+                if($li.classList.contains('active')) {
+                    $li.classList.remove('active');
+                    return;
+                }
+            });
+        };
+
+        $fruits.onclick= e=>{
+            // console.log('클릭이벤트 발생');
+            // console.log(e.target);
+
+            //이벤트 타겟 제한 =?> 이전에 ul 태그 찍으면 3개의 li들이 나오는데 이것을 해결하기 위한 방안
+            // console.log(e.target.matches('#fruits>li')); //' 'css 선택자 입력, 일치하면 true, 불일치 false
+                        //이벤트터진(e.target) 녀석이 fruits>li 부분을 입력하면~~
+            
+            // if(! e.target.matches('#fruits>li')){
+            //     return;
+            // }
+
+            //1. 기존의 active가 붙은 태그에서 active 제거
+            removeActive();
+            //2. click대상(e.target)에 클래스 active를 부여하고
+            e.target.classList.add('active')
+            //e.target 요소노드!!
+            //3. 그 텍스트를 em.msg태그에 복사한다
+            const $msg = document.querySelector('.msg');
+            $msg.textContent=e.target.textContent;   //타겟의 택스트를 textconten로
+
+
+
+
+
+            //추가버튼
+            /*입력창에 과일 이름을 쓰고 
+                '추가' 버튼을 누르면  --event
+                입력창에 있는 텍스트가 
+                <li id='텍스트>텍스트<li>
+                이런형태로 생성되어 ul의 끝으로 추가 되어야한다
+            */
+
+            const $addclick = document.querySelector('#add');
+            const $textbox = document.querySelector('.text-box');
+            console.log($textbox);
+            
+            const makeNewFruit = () => {
+                  const $text = $textbox.value;
+
+               const $newLi= document.createElement('li')
+                $newLi.setAttribute('id', text.toLowerCase());
+                // console.log($newLi);
+
+                $newLi.textContent=text;
+                // console.log($newLi);
+
+                $fruits.appendChild($newLi);
+               
+                $textbox.value='';
+
+            }
+
+            $addclick.onclick = e=> makeNewFruit();
+            
+            $textbox.onekeyup=e=>{
+                if(e.key==='Enter') makeNewFruit();
+            }
+              
+         
+            }
+            
+        
+
+
+        // 3/24 11:30~11:44
+
+    </script>
+</body>
+</html>

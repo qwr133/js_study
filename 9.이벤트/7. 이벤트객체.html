@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>아무곳이나 클릭하세요</p>
+    <em class="msg"></em>
+
+    <hr><hr><hr> 
+
+    <input type="text" id="text">
+    <p class="show"></p>
+
+
+
+    <script>
+        //body부분(화면전체) 클릭하면 이벤트 발생
+        document.onclick=function(e){ 
+
+            //const {x, y} =0; 아래 텍스트컨텐트에서 e.x 에서 x,y로만 출력하고 싶을 때
+            console.log(`x : ${e.x}, y : ${e.y}`);
+
+            const $em = document.querySelector('.msg')
+            $em.textContent = `x : ${e.x}, y : ${e.y}`;
+        };
+
+        const $textInput = document.getElementById('text')
+        console.log($textInput);
+
+        $textInput.addEventListener('keyup', e=> {
+            // console.log(e);
+
+            const $show =document.querySelector('.show'); 
+            // if(e.key==='Enter'){
+                $show.textContent=$textInput.value; //이렇게 하면 한글자씩 입력되고 지울때도 한글자씩 지워짐
+            //     $textInput.value='';
+            // }
+        })
+
+    </script>
+
+
+</body>
+</html>
