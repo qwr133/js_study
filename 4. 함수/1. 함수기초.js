@@ -7,10 +7,10 @@ function happyGreeeting(yourName) {
     console.log('즐거운 하루 되세요');
 }
 
-function happyGreeeting(yourName) { //여러개 입력시 이게 가능한지,
-    console.log(`${yourName}님 안녕하세요 방가방가`);
-    console.log(`${day} 하루 되세요`);
-}
+// function happyGreeeting(yourName) { //여러개 입력시 이게 가능한지,
+//     console.log(`${yourName}님 안녕하세요 방가방가`);
+//     console.log(`${day} 하루 되세요`);
+// }
 
 
 //함수 호출 - 사용한다

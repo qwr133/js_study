@@ -10,7 +10,7 @@
 var flag = confirm('게임을 다시 하시겠습니까?'); //취소 눌렀을 시 whie (true 값이 나타남)
 console.log(flag);
 
-
+    
 while(true){
 var HIGH =1, MIDDLE = 2, LOW=3;
 
