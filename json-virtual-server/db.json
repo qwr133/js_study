@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "account": "abc1234",
+      "userName": "주차킹",
+      "address": "캘리포니아"
+    },
+    {
+      "id": 2,
+      "account": "bed1524",
+      "userName": "베드킹",
+      "address": "뉴욕"
+    },
+    {
+      "id": "77",
+      "account": "abc777",
+      "userName": "곽두삼",
+      "address": "가리봉동"
+    },
+    {
+      "id": "33",
+      "account": "dfs1254",
+      "userName": "마두팔",
+      "address": "구로동"
+    }
+  ],
+  "boards": []
+}

@@ -39,6 +39,7 @@ function userinfo(){
 }
 userinfo();
 
+
 //message만 parameter하면 안됨 - user은 내가 줄테니까 원하는 코드를 통채로 넣어봐
 
 function alertUserInfo(wannaSay) {

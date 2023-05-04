@@ -13,7 +13,7 @@
 //매개변수(parameter): 함수를 정의할 때 외부에서 받아오는 값을 저장할 변수(begin, end etc)
 function calcRangeTotal(begin ,end) {
 
-    console.log(`x: ${begin}, y: ${end}`);
+    // console.log(`x: ${begin}, y: ${end}`);
 
 
     var total =0; //총합을 저장할 변수
@@ -45,17 +45,17 @@ function sayHello(language='한국어'){
 
 sayHello(); //따로 언어 명시 하지 않아도 한국어가 기본 defalut 값으로 변경(line29)
 
-function myslice(arr, start, end){
-    //사본배열 생성
-    var copyArr=[];
-
-    for(var i=start; i<end; i++){
-        copyArr.push(arr[i[]])
+function mySlice(arr, start, end) {
+    // 사본 배열 생성
+    var copyArr = [];
+    for (var i = start; i < end; i++) {
+        copyArr.push(arr[i]);
     }
-    return copyArr
+    return copyArr;
 }
 
-newARR_myslice([10,20,30,40,50], 1,3);
+
+var newArr = mySlice([10,20,30,40,50], 1, 3);
 console.log(newArr);
 
 //매개변수가 없는 함수 ex, makeline
@@ -66,5 +66,4 @@ function selectRandomPet(){
 }
 
 var randomPet = selectRandomPet();
-console.log(`랜덤동물 : ${randomPet}`);
-
+console.log(`랜덤동물: ${randomPet}`);

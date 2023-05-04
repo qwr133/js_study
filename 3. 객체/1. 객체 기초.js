@@ -34,7 +34,7 @@ console.log(typeof dog);
 //객체에 저장된 데이터 참조
 console.log(dog.name);
 console.log(cat.age);
-
+i
 console.log(dog.favorite[0]) //favorite이 배열임으로 배열로 접근해야함
 
 dog.favorite.push('꼬리흔들기') //배열추가 가능

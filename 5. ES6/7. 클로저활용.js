@@ -12,9 +12,10 @@
 //     return() => --count;
 // })();
 
-// console.log(increase);
-// console.log(increase);
-// console.log(decrease);
+// console.log(increase); 1
+// console.log(increase); 2
+// console.log(decrease); 1
+/*
 console.log('=========================================================');
 function counterClosure() { //increse, decrease 값을 둘다 입력해야함
 
@@ -32,6 +33,7 @@ function counterClosure() { //increse, decrease 값을 둘다 입력해야함
         decrease: decrease
     };
 }
+
     //객체(return값들)
 const counter = counterClosure();
 
@@ -41,8 +43,10 @@ const decrease = counter.decrease;
 console.log(increase);
 console.log(increase);
 console.log(decrease);
+*/
 
 
+/*
     //즉시실행
 const counter = (() => { //화살표함수로 바꾸기
 
@@ -64,6 +68,11 @@ console.log(increase()); // 1
 console.log(increase()); // 2
 console.log(decrease()); // 1
 
+*/
+
+
+
+/*
 function counterWithCbClosure(){
     let count =0;
 
@@ -81,7 +90,7 @@ console.log(counter_(function(c){ return count +=3;  }));
 console.log(counter_((c) => ++c )); 
 console.log(counter_((c) => c +=3 ));
 console.log(counter_((c) => c **=2 ));
-
+*/
 
 //화살표함수로 바꿔보기
 const counter2_ = (() => {    
